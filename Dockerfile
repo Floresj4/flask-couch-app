@@ -23,6 +23,7 @@ COPY service.py .
 
 #export the flask application
 ENV FLASK_APP service.py
+# ENV FLASK_ENV=development
 
 #expose a mappable port
 EXPOSE 5000
