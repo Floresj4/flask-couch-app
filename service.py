@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -8,4 +8,4 @@ def hello():
 
 @app.route('/hello/<username>', methods = ['GET'])
 def hello_user(username: str):
-    return 'Hello, {}!'.format(username)
+    return render_template('hello.html', name = username)
