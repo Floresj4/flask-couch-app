@@ -6,6 +6,6 @@ app = Flask(__name__)
 def hello():
     return "Hello!"
 
-@app.route('/hello/<username>')
+@app.route('/hello/<username>', methods = ['GET'])
 def hello_user(username: str):
     return 'Hello, {}!'.format(username)
