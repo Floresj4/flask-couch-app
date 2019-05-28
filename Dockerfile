@@ -18,7 +18,7 @@ ENV LANG en_US.UTF-8
 WORKDIR /app
 
 #move application files
-COPY templates .
+COPY templates ./templates
 COPY service.py .
 
 #export the flask application
