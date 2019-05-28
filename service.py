@@ -20,7 +20,6 @@ def cookie_user(username: str):
 
     resp = make_response(render_template('hello.html', 
         name = username, 
-        changed = (cookie_username is not None and cookie_username == username),
         returning = (cookie_username is not None)))
 
     resp.set_cookie('username', username)
