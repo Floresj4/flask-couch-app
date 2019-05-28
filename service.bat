@@ -13,12 +13,12 @@ flask run --host=0.0.0.0
 GOTO finish
 
 :docker-build
-rem build and tag the latest image
+rem build and tag the latest Docker image
 docker build -t flask-app:latest .
 GOTO finish
 
 :docker-run
-rem start the container and ensure its removable on exit
+rem start the container and ensure it's removable on exit
 docker run -it -p 5000:5000 --rm flask-app:latest
 GOTO finish
 
