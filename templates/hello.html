@@ -5,9 +5,16 @@
     </head>
 <body>
     {% if name %}
-        <h3>Hello, {{ name }}</h3>
+        {% if returning %}
+            <h3>Welcome back, {{ name }}</h3>
+        {% else %}
+            <h3>Hello, {{ name }}</h3>
+        {% endif %}
     {% else %}
         <h3>Hello, world!</h3>
     {% endif %}
+
+    <h4>{{ changed }}</h4>
+    <h4>{{ returning }}</h4>
 </body>
 </html>
