@@ -26,3 +26,7 @@ def cookie_user(username: str):
     resp.set_cookie('username', username)
     
     return resp
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html'), 404
