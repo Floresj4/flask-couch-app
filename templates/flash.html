@@ -1,21 +1,15 @@
-<!doctype html>
-<html>
-<head>
-    <title>Index</title>
-</head>
-<body>
-    <div class='main-container'>
-        {% with messages = get_flashed_messages() %}
+{% extends 'base.html' %}
+
+{% block body %}
+
+    {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul class=flashes>
             {% for message in messages %}
-            <li>{{ message }}</li>
+                <li>{{ message }}</li>
             {% endfor %}
         </ul>
         {% endif %}
-        {% endwith %}
-        {% block body %}{% endblock %}
-    </div>
-</body>
+    {% endwith %}
 
-</html>
+{% endblock %}

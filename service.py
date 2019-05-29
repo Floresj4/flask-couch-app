@@ -1,7 +1,10 @@
 from flask import Flask, render_template, make_response, request
 from flask import flash, redirect, url_for
 
+from jinja2 import Environment
+
 app = Flask(__name__)
+#a session key is required for flash messaging
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @app.route('/hello')
@@ -28,13 +31,13 @@ def cookie_user(username: str):
     
     return resp
 
-@app.route('/showflash')
-def showflash():
-    return render_template('flash.html')
-
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
+
+@app.route('/showflash')
+def showflash():
+    return render_template('flash.html')
 
 @app.route('/flash')
 def flash_response():

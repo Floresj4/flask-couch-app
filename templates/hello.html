@@ -1,20 +1,13 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Hello</title>
-    </head>
-<body>
-    <div class='main-container'>
-        
-        {% if name %}
-            {% if returning %}
-                <h3>Welcome back, {{ name }}</h3>
-            {% else %}
-                <h3>Hello, {{ name }}</h3>
-            {% endif %}
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if name %}
+        {% if returning %}
+            <h3>Welcome back, {{ name }}</h3>
         {% else %}
-            <h3>Hello, world!</h3>
+            <h3>Hello, {{ name }}</h3>
         {% endif %}
-    </div>
-</body>
-</html>
+    {% else %}
+        <h3>Hello, world!</h3>
+    {% endif %}
+{% endblock %}
