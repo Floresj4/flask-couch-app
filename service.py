@@ -1,6 +1,8 @@
 from flask import Flask, render_template, make_response, request
-app = Flask(__name__)
+from flask import flash, redirect, url_for
 
+app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @app.route('/hello')
 def hello():
@@ -26,6 +28,15 @@ def cookie_user(username: str):
     
     return resp
 
+@app.route('/showflash')
+def showflash():
+    return render_template('flash.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
+
+@app.route('/flash')
+def flash_response():
+    flash('You were successfully redirected.')
+    return redirect(url_for('showflash'))
