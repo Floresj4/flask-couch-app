@@ -7,6 +7,10 @@ app = Flask(__name__)
 #a session key is required for flash messaging
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 @app.route('/hello')
 def hello():
     return "Hello!"
