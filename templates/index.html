@@ -13,7 +13,7 @@
 
     <div class='row'>
         <div class='col-xs-8 col-xs-offset-2'>
-            <h4>Look what I can do!</h4>
+            <h3>Look what I can do!</h3>
             <p>
                 This project skims the surface of what Flask coupled with jinja2 can do.  I won't attempt to touch every
                 aspect of the software, but a few basic and important concepts.
@@ -23,7 +23,7 @@
 
     <div class='row'>
         <div class='col-xs-8 col-xs-offset-2'>
-            <h5>Templates</h5>
+            <h4>Templates</h4>
             <p>
                 The pages of this demo are produced via templates.  Jinja2 provides template inheritance and embedding
                 child templates with the <code>extends</code>, <code>block</code>, and <code>endblock</code> tag.  Check
@@ -34,7 +34,7 @@
 
     <div class='row'>
         <div class='col-xs-8 col-xs-offset-2'>
-            <h5>Remember me</h5>
+            <h4>Remember me</h4>
             <p>
                 Enter some text below and click the Ok button.  I'll create a cookie to remember you.
             </p>
@@ -66,5 +66,27 @@
         </div>
     </div>
     {% endif %}
+
+    <div class='row'>
+        <div class='col-xs-8 col-xs-offset-2'>
+            <h4>Whoops!!</h4>
+            <p>
+                In the event of a malformed url in the browser, Flask provides error routing.  The link produces a <strong>404 - Not Found</strong> response
+                because there is no page to render at the url.
+            </p>
+            
+            <div style='width: 170px; margin: 0 auto'>
+                <p>
+                    <span class='glyphicon glyphicon-link'></span>
+                    <a href='/somejunkurl'>non-existent-page.html</a>
+                </p>
+            </div>
+
+            <p>
+                Flask provides the <code>@app.errorhandler(404)</code> decorator for handling request errors and redirecting.  You'll be taken to 
+                a page not found view with the hyperlink above.
+            </p>
+        </div>
+    </div>
 
 {% endblock %}
