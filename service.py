@@ -9,7 +9,8 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    rn = request.cookies.get('remember-me')
+    return render_template('index.html', remembered_name = rn)
 
 @app.route('/hello')
 def hello():
@@ -24,20 +25,25 @@ def cookie_user(username: str):
 
     cookie_username = None
     try: cookie_username = request.cookies.get('username')
-    except:
-        print('No cookie found.')
+    except: print('No cookie found.')
 
     resp = make_response(render_template('hello.html', 
         name = username, 
         returning = (cookie_username is not None)))
 
     resp.set_cookie('username', username)
-    
     return resp
 
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
+
+@app.route('/rememberme', methods = ['POST'])
+def remember_me():
+    rm = request.form['remember-me']
+    resp = make_response(redirect('/'))
+    resp.set_cookie('remember-me', rm)
+    return resp
 
 @app.route('/showflash')
 def showflash():

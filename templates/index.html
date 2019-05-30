@@ -3,12 +3,68 @@
 {% block body %}
 
     <div class='row'>
-        <div class='col-xs-12'>
+        <div class='col-xs-8 col-xs-offset-2'>
             <p>
                 Welcome to the flask web application/service project, a checklist project &ndash; create an application or api &ndash; using the Flask 
                 microframework for learning a new technology and some nerdy computer fun!
             </p>
         </div>
     </div>
+
+    <div class='row'>
+        <div class='col-xs-8 col-xs-offset-2'>
+            <h4>Look what I can do!</h4>
+            <p>
+                This project skims the surface of what Flask coupled with jinja2 can do.  I won't attempt to touch every
+                aspect of the software, but a few basic and important concepts.
+            </p>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class='col-xs-8 col-xs-offset-2'>
+            <h5>Templates</h5>
+            <p>
+                The pages of this demo are produced via templates.  Jinja2 provides template inheritance and embedding
+                child templates with the <code>extends</code>, <code>block</code>, and <code>endblock</code> tag.  Check
+                out the Jinja documentation directly or continue perusing this repository.
+            </p>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class='col-xs-8 col-xs-offset-2'>
+            <h5>Remember me</h5>
+            <p>
+                Enter some text below and click the Ok button.  I'll create a cookie to remember you.
+            </p>
+        </div>
+    </div>
+    
+    <div class='row' style='margin-bottom: 10px'>
+        <div class='col-xs-8 col-xs-offset-2'>
+            <form method='POST' action='rememberme' class='form-inline'>
+                <div class='form-group'>
+                    <input type='text' 
+                        id='remember-me'
+                        class='form-control' 
+                        name='remember-me'/>
+                </div>
+                
+                <button type='submit'
+                    class='btn btn-primary'>Ok</button>
+            </form>
+        </div>
+    </div>
+
+    {% if remembered_name %}
+    <div class='row'>
+        <div class='col-xs-8 col-xs-offset-2'>
+            <p>Hello, {{ remembered_name }}!  See I remembered you <span style='font-family:Courier'>:]</span>  If you navigate away or close this page
+                I'll still remember you, just as long as you don't clear your browser cookies.
+            </p>
+        </div>
+    </div>
+    {% endif %}
 
 {% endblock %}
