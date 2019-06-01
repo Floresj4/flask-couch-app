@@ -14,7 +14,7 @@ GOTO finish
 
 :docker-build
 rem build and tag the latest Docker image
-docker build -t flask-app:latest .
+docker build -f ./_service/Dockerfile -t flask-app:latest .
 GOTO finish
 
 :docker-run
@@ -23,6 +23,6 @@ docker run -it -p 5000:5000 --rm flask-app:latest
 GOTO finish
 
 :error
-echo "'build', 'run', and 'local' are the only supported commands."
+echo "'docker-build', 'docker-run', and 'local' are the only supported commands."
 
 :finish
