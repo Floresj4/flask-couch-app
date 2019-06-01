@@ -1,7 +1,7 @@
 @echo off
 
-IF "%1"=="build" GOTO build
-IF "%1"=="run" GOTO run
+IF "%1"=="docker-build" GOTO docker-build
+IF "%1"=="docker-run" GOTO docker-run
 IF "%1"=="local" GOTO local
 GOTO error
 

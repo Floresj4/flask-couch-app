@@ -17,20 +17,10 @@ Once activated, the required libraries can be installed using the requirements.t
 pip install -r requirements.txt
 ```
 
-##### Running on windows
+##### service.bat
 
-```sh
-> set FLASK_APP=service.py
-> python -m flask run
-```
+service.bat provides convenience routines to build and deploy the application on a windows machine.
 
-##### Running on linux
-
-```sh
-> export FLASK_APP=service.py
-> python -m flask run
-```
-
-##### Running with Docker
-
-This project provides a Dockerfile to build and run
+1. **docker-build** creates a container image to run the application in a hosted environment
+2. **docker-run** runs the container image
+3. **local runs** the flask application on the host windows machines
