@@ -1,8 +1,8 @@
-### Flask web application/service
+## Flask web application/service
 
 A checklist project &ndash; create an application or api &ndash; using the Flask microframework for learning a new technology and some nerdy computer fun!
 
-##### Setup
+### Setup
 
 Using a virtual environment helps to avoid contaminating the native python installed libraries.  The following commands will create and activate a virtual environment.
 
@@ -14,10 +14,10 @@ Using a virtual environment helps to avoid contaminating the native python insta
 Once activated, the required libraries can be installed using the requirements.txt file in the root directory.
 
 ```sh
-pip install -r requirements.txt
+> pip install -r requirements.txt
 ```
 
-##### service.bat
+### service.bat
 
 service.bat provides convenience routines to build and deploy the application on a windows machine.
 
