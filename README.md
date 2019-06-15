@@ -26,3 +26,16 @@ Once activated, the required libraries can be installed using the requirements.t
 ```
 
 Open your browser an navigate to `localhost:5000`.
+
+
+Couchdb creates files in the following locations
+
+```sh
+find / -name "couchdb"
+/etc/logrotate.d/couchdb
+/var/lib/couchdb
+/var/log/couchdb
+/opt/couchdb
+/opt/couchdb/bin/couchdb
+/opt/couchdb/var/log/couchdb
+```
