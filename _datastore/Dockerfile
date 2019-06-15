@@ -5,13 +5,16 @@ WORKDIR /etc/yum.repos.d/
 COPY ./_datastore/couchdb.repo .
 RUN yum-config-manager --add-repo ./couchdb.repo
 
+#get couch
 RUN yum install -y epel-release
 RUN yum install -y couchdb
 
-#install couch dependencies
-RUN yum install -y autoconf autoconf-archive \
-    automake curl-devel \
-    erlang gcc-c++ help2man \
-    js-devel libicu-devel \
-    libtool perl-Test-Harness \
-    unzip zip wget
+#overwrite local configuration
+COPY _datastore/local.ini /opt/couchdb/etc/
+
+EXPOSE 5984
+
+ENTRYPOINT /opt/couchdb/bin/couchdb &
+
+#curl -ik http://localhost:5984/flask-app
+#curl -ik http://localhost:5984/flask-app/_all_docs

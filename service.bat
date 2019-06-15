@@ -9,12 +9,12 @@ GOTO error
 
 :couch-build
 rem build and tag the latest couchdb image
-docker build -f ./_datastore/Dockerfile -t couchdb-service:latest .
+docker build -f ./_datastore/Dockerfile -t couchdb-api:latest .
 GOTO finish
 
 :couch-run
 rem start the container and ensure it's removable on exit
-docker run -it -p 5001:5001 --rm couchdb-service:latest
+docker run -it -p 5984:5984 --rm couchdb-api:latest
 GOTO finish
 
 :service-build
