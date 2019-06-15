@@ -39,3 +39,9 @@ find / -name "couchdb"
 /opt/couchdb/bin/couchdb
 /opt/couchdb/var/log/couchdb
 ```
+
+```sh
+curl -ik http://localhost:5984/flask-app
+curl -XPUT -H "Content-Type: application/json" -d '{ "name":"jason", "email":"jason@mail.com" }' http://localhost:5984/flask-app/sampledoc
+curl -ik http://localhost:5984/flask-app/_all_docs
+```

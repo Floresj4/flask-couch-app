@@ -15,6 +15,3 @@ COPY _datastore/local.ini /opt/couchdb/etc/
 EXPOSE 5984
 
 ENTRYPOINT /opt/couchdb/bin/couchdb &
-
-#curl -ik http://localhost:5984/flask-app
-#curl -ik http://localhost:5984/flask-app/_all_docs
