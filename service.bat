@@ -14,7 +14,7 @@ GOTO finish
 
 :couch-run
 rem start the container and ensure it's removable on exit
-docker run -it -p 5984:5984 --rm couchdb-api:latest
+docker run -itd -p 5984:5984 --rm couchdb-api:latest
 GOTO finish
 
 :service-build
