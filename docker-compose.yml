@@ -15,5 +15,8 @@ services:
       context: .
     volumes:
       - .:/app
+    environment: 
+      FLASK_ENV: development
+      FLASK_APP: service.py
     ports:
       - 5000:5000
