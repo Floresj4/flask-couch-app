@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  
+  couch:
+    build: 
+      dockerfile: ./_datastore/Dockerfile
+      context: .
+    ports:
+      - 5984:5984
+
+  flask:
+    build:
+      dockerfile: ./_service/Dockerfile
+      context: .
+    ports:
+      - 5000:5000
