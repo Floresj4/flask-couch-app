@@ -10,7 +10,7 @@ RUN yum install -y epel-release
 RUN yum install -y couchdb
 
 #overwrite local configuration
-COPY _datastore/local.ini /opt/couchdb/etc/
+COPY _datastore/opt/couchdb/etc/local.ini /opt/couchdb/etc/
 
 EXPOSE 5984
 
