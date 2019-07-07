@@ -1,6 +1,12 @@
 __pycache__
+<<<<<<< HEAD
 env/
 .gitignore
 Dockerfile
 README.md
 service.bat
+=======
+service.bat
+.gitignore
+env/
+>>>>>>> couchdb

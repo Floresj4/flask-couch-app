@@ -1,2 +1,6 @@
 env/
 __pycache__
+.vscode/
+_datastore/data/
+_datastore/response/
+_datastore/couch.db
