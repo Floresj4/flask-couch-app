@@ -13,5 +13,7 @@ services:
     build:
       dockerfile: ./_service/Dockerfile
       context: .
+    volumes:
+      - .:/app
     ports:
       - 5000:5000
