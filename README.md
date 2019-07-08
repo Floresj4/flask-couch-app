@@ -45,3 +45,9 @@ curl -ik http://localhost:5984/flask-app
 curl -XPUT -H "Content-Type: application/json" -d '{ "name":"jason", "email":"jason@mail.com" }' http://localhost:5984/flask-app/sampledoc
 curl -ik http://localhost:5984/flask-app/_all_docs
 ```
+
+docker run -it --network=flask-api_default centos:latest
+docker inspect --format="{{json .NetworkSettings}}" $CONTAINER_NAME
+docker-compose up
+docker-compose stop
+docker-compose rm -f
