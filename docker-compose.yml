@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  
+
   couch:
     build: 
       dockerfile: ./_datastore/Dockerfile
@@ -9,14 +9,24 @@ services:
     ports:
       - 5984:5984
 
+  couch-setup:
+    image: 'centos:latest'
+    entrypoint: /app/setup.sh
+    volumes:
+      - ./_datastore:/app
+    depends_on:
+      - couch
+
   flask:
     build:
       dockerfile: ./_service/Dockerfile
       context: .
+    ports:
+      - 5000:5000
     volumes:
       - .:/app
     environment: 
       FLASK_ENV: development
       FLASK_APP: service.py
-    ports:
-      - 5000:5000
+    depends_on:
+      - couch-setup
