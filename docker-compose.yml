@@ -2,6 +2,9 @@ version: '3'
 
 services:
 
+  #------------------------------------
+  # couchdb container
+  #------------------------------------
   couch:
     build: 
       dockerfile: ./_datastore/Dockerfile
@@ -9,6 +12,10 @@ services:
     ports:
       - 5984:5984
 
+  #------------------------------------
+  # couchdb setup container: curl some
+  # data files into the database
+  #------------------------------------
   couch-setup:
     image: 'centos:latest'
     entrypoint: /app/setup.sh
@@ -17,6 +24,9 @@ services:
     depends_on:
       - couch
 
+  #----------------------------
+  # flask service container
+  #----------------------------
   flask:
     build:
       dockerfile: ./_service/Dockerfile
