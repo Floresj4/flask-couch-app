@@ -20,7 +20,7 @@ services:
     image: 'centos:latest'
     entrypoint: /app/setup.sh
     volumes:
-      - ./_datastore:/app
+      - ./_helper:/app
     depends_on:
       - couch
 

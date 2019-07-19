@@ -1,0 +1,110 @@
+[
+    {
+      "team": "Miami Marlins",
+      "no": 28,
+      "name": "Bryan Holaday",
+      "pos": "C",
+      "age": 31,
+      "ht": "6'0",
+      "wt": 214
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 15,
+      "name": "Brian Anderson",
+      "pos": "3B",
+      "age": 26,
+      "ht": "6'3",
+      "wt": 220
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 10,
+      "name": "JT Riddle",
+      "pos": "SS",
+      "age": 27,
+      "ht": "6'1",
+      "wt": 193
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 26,
+      "name": "Garrett Cooper",
+      "pos": "RF",
+      "age": 28,
+      "ht": "6'5",
+      "wt": 232
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 18,
+      "name": "Neil Walker",
+      "pos": "2B",
+      "age": 33,
+      "ht": "6'1",
+      "wt": 216
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 21,
+      "name": "Curtis Granderson",
+      "pos": "RF",
+      "age": 38,
+      "ht": "6'1",
+      "wt": 207
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 2,
+      "name": "Yadiel Rivera",
+      "pos": "2B",
+      "age": 27,
+      "ht": "6'3",
+      "wt": 190
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 13,
+      "name": "Starlin Castro",
+      "pos": "2B",
+      "age": 29,
+      "ht": "6'2",
+      "wt": 225
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 47,
+      "name": "Harold Ramírez",
+      "pos": "RF",
+      "age": 24,
+      "ht": "5'11",
+      "wt": 234
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 38,
+      "name": "Jorge Alfaro",
+      "pos": "C",
+      "age": 26,
+      "ht": "6'3",
+      "wt": 233
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 46,
+      "name": "César Puello",
+      "pos": "LF",
+      "age": 28,
+      "ht": "6'2",
+      "wt": 220
+    },
+    {
+      "team": "Miami Marlins",
+      "no": 19,
+      "name": "Miguel Rojas",
+      "pos": "SS",
+      "age": 30,
+      "ht": "6'0",
+      "wt": 205
+    }
+  ]
