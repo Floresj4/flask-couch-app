@@ -3,7 +3,22 @@ import logging
 import time
 import os
 
+logging.basicConfig(
+    level = logging.DEBUG,
+    handlers = [logging.StreamHandler()])
 logger = logging.getLogger(__name__)
+
+headers = {
+    "content-type": "application/json"
+}
+
+'''
+Improve the bulk loading process.  Curling @data files encountered an encoding issue
+so this python script corrects while loading the datafile and post/put against the
+database using requests==2.22.0+.
+
+bulking: https://docs.couchdb.org/en/2.3.1/api/database/bulk-api.html?highlight=bulk#inserting-documents-in-bulk
+'''
 
 if __name__ == "__main__":
 
@@ -16,12 +31,16 @@ if __name__ == "__main__":
     with open(data_json, encoding = 'utf-8') as r:
         players = json.load(r)
 
-    headers = {
-        "content-type": "application/json"
-    }
-
-    response = requests.put('http://couch:5984/baseball?n=1', headers = headers)
-    print(response.status_code)
-    response = requests.post('http://couch:5984/baseball/_bulk_docs', headers = headers, data = json.dumps(players))
-    print(response.status_code)
-    print(response.text)
+    url = 'http://couch:5984/baseball?n=1'
+    logger.debug('Executing PUT request: {}'.format(url))
+    response = requests.put(url, headers = headers)
+    if response.status_code not in [201, 412]:
+        raise Exception("Database creation failed! {}".format(response.text))
+    
+    url = 'http://couch:5984/baseball/_bulk_docs'
+    logger.debug('Executing PUT request: {}'.format(url))
+    response = requests.post(url, headers = headers, data = json.dumps(players))
+    if(response.status_code != 201):
+        raise Exception("Loading team data failed! {}".format(response.text))
+    
+    logger.debug('Database loading completed successfully.')
