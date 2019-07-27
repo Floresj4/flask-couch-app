@@ -9,5 +9,6 @@ COPY ./_helper/data ./data
 COPY ./_helper/ .
 RUN chmod 222 ./data/
 
+RUN python36 -m pip install --upgrade pip
 RUN python36 -m pip install -r requirements.txt
-# ENTRYPOINT python36 ./load.py
+ENTRYPOINT python36 ./load.py
