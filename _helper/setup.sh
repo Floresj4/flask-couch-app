@@ -7,13 +7,10 @@ sleep 5
 curl -XPUT http://couch:5984/baseball?n=1
 
 #-- add a document
-curl -ik -XPOST -H "Content-Type: application/json" http://localhost:5984/baseball -d @data-00.json
-
-#-- add a document
-curl -ik -XPOST -H "Content-Type: application/json" http://localhost:5984/baseball -d @data-01.json
+curl -ik -XPOST -H "Content-Type: application/json" http://couch:5984/baseball/_bulk_docs -d ./data/@data-00.json
 
 #-- get a document
-#curl -ik -XGET http://localhost:5984/baseball/57a357df16f446381db1330844000532
+#curl -ik -XGET http://couch:5984/baseball/57a357df16f446381db1330844000532
 
 #-- get database info
-#curl -ik -XGET http://localhost:5984/baseball
+#curl -ik -XGET http://couch:5984/baseball

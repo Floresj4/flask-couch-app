@@ -17,8 +17,9 @@ services:
   # data files into the database
   #------------------------------------
   couch-setup:
-    image: 'centos:latest'
-    entrypoint: /app/setup.sh
+    build:
+      dockerfile: ./_helper/Dockerfile
+      context: .
     volumes:
       - ./_helper:/app
     depends_on:

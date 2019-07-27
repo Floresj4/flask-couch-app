@@ -1,5 +1,13 @@
 FROM centos:latest
 
-COPY ./setup.sh .
+RUN yum install -y epel-release
+RUN yum install -y python36
+RUN yum install -y python36-pip
 
-ENTRYPOINT ./setup.sh
+WORKDIR /app
+COPY ./_helper/data ./data
+COPY ./_helper/ .
+RUN chmod 222 ./data/
+
+RUN python36 -m pip install -r requirements.txt
+# ENTRYPOINT python36 ./load.py

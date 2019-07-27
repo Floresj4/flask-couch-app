@@ -48,7 +48,8 @@ curl -ik http://localhost:5984/flask-app/_all_docs
 ```sh
 docker run -it --network=flask-api_default centos:latest
 docker inspect --format="{{json .NetworkSettings}}" $CONTAINER_NAME
-docker-compose up
+# rebuild the containers to prevent unwanted volume caching
+docker-compose up --build
 docker-compose stop
 docker-compose rm -f
 ```
