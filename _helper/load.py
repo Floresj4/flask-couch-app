@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
         # load data to encode and post via requests
         data_json = './data/players.json'
-        print('loading data file {}'.format(data_json))
+        logger.info('loading data file {}'.format(data_json))
         with open(data_json, encoding = 'utf-8') as r:
             players = json.load(r)
 
