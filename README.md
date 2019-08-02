@@ -34,4 +34,4 @@ Open your browser and navigate to `localhost:5000`.
 
 ### service.py
 
-[service.py](https://www.google.com "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available [here](http://localhost:5000).
+[service.py](https://github.com/Floresj4/flask-couch-app/blob/master/service.py "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available [here](http://localhost:5000).
