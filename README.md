@@ -2,9 +2,9 @@
 
 A checklist project &ndash; create an application or api &ndash; using the Flask microframework for learning a new technology and some nerdy computer fun!
 
-### service.bat
+### ~~service.bat~~
 
-service.bat provides convenience routines to build and deploy the application on a windows machine.
+Deprecated, but worth mentioning... service.bat is docker-compose before I started working with compose.
 
 1. **docker-build** creates a container image to run the application in a hosted environment
 2. **docker-run** runs the container image
