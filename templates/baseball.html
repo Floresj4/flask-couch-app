@@ -13,6 +13,13 @@
         {% if error %}
             <h3>{{ error }}</h3> 
         {% else %}
+
+            <p>
+                The data is filterable by the service API - a query parameter send to the query 
+                parameter associated with the endpoint responsible for server-side rendering.  In a rich web
+                application, this would be more suitable as a client-side Document Object Model manipulation event.
+            </p>
+
             <div class="table-responsive">
                 <table class='table table-hover'>
                     <thead>
@@ -39,6 +46,13 @@
                     </tbody>
                 </table>
             </div>
+
+            {% if filtering %}
+                <ul style='list-style: none; padding-left: 0'>
+                    <li><a href='./baseball'><span class='glyphicon glyphicon-step-backward'></span> Back</a></li>
+                </ul>
+            {% endif %}
+
         {% endif %}
         
             

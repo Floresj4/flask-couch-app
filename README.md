@@ -6,13 +6,14 @@ A checklist project &ndash; create an application or api &ndash; using the Flask
 
 Deprecated, but worth mentioning... service.bat is docker-compose before I started working with compose.
 
-1. **docker-build** creates a container image to run the application in a hosted environment
-2. **docker-run** runs the container image
-3. **local** runs the flask application on the host windows machines
+1. ***-build** create the service container - flask or couch
+2. ***-run** runs the container image
 
-### local
+### ~~local~~
 
-local requires the proper Python configuration to run this application on your local machine.  Using a virtual environment helps to avoid contaminating the native python installed libraries.  The following commands will create and activate a virtual environment.
+Runs the Flask app on the host windows machines. local requires the proper Python configuration to run this application on your local machine.  Using a virtual environment helps to avoid contaminating the native python installed libraries.  
+
+The following commands will create and activate a virtual environment.
 
 ```sh
 > python -m virtualenv .\env
@@ -25,27 +26,11 @@ Once activated, the required libraries can be installed using the requirements.t
 > pip install -r requirements.txt
 ```
 
-Open your browser an navigate to `localhost:5000`.
+Open your browser and navigate to `localhost:5000`.
+
+[service.py](https://www.google.com "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available [here](http://localhost:5000).
 
 
-Couchdb creates files in the following locations
-
-```sh
-find / -name "couchdb"
-/etc/logrotate.d/couchdb
-/var/lib/couchdb
-/var/log/couchdb
-/opt/couchdb
-/opt/couchdb/bin/couchdb
-/opt/couchdb/var/log/couchdb
-```
-
-```sh
-curl -ik http://localhost:5984/flask-app
-curl -XPUT -H "Content-Type: application/json" -d '{ "name":"jason", "email":"jason@mail.com" }' http://localhost:5984/flask-app/sampledoc
-curl -ik http://localhost:5984/flask-app/_all_docs
-```
-```sh
 docker run -it --network=flask-api_default centos:latest
 docker inspect --format="{{json .NetworkSettings}}" $CONTAINER_NAME
 # rebuild the containers to prevent unwanted volume caching
