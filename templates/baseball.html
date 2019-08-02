@@ -10,9 +10,39 @@
             production deployment these types of requests would require authentication: saml token, jwt, etc.
         </p>
 
-        <table class='table'>
+        {% if error %}
+            <h3>{{ error }}</h3> 
+        {% else %}
+            <div class="table-responsive">
+                <table class='table table-hover'>
+                    <thead>
+                        <th>Team</th>
+                        <th>Name</th>
+                        <th>Number</th>
+                        <th>Position</th>
+                        <th>Age</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                    </thead>
+                    <tbody>
+                        {% for player in data['rows'] %}
+                            <tr>
+                                <td><a href="?filter={{player.value.team}}">{{ player.value.team }}</a></td>
+                                <td>{{ player.value.name }}</td>
+                                <td>{{ player.value.number }}</td>
+                                <td>{{ player.value.position }}</td>
+                                <td>{{ player.value.age }}</td>
+                                <td>{{ player.value.height }}</td>
+                                <td>{{ player.value.weight }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+        
             
-        </table>
+        
     </div>
 </div>
 

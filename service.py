@@ -3,6 +3,14 @@ from flask import flash, redirect, url_for
 
 from jinja2 import Environment
 
+import requests, json, urllib
+import logging
+
+logging.basicConfig(
+    level = logging.INFO,
+    handlers = [logging.StreamHandler()])
+logger = logging.getLogger(__name__)
+
 app = Flask(__name__)
 #a session key is required for flash messaging
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -15,6 +23,27 @@ def home():
 @app.route('/hello')
 def hello():
     return "Hello!"
+
+@app.route('/baseball')
+def baseball():
+    error_message = None
+    player_data = None
+    filter = None
+
+    # get a query param to use for filtering
+    filter = request.args.get('filter')
+    if filter != None and filter != '':
+        encoded = urllib.parse.quote(str.encode(filter))
+        filter = '?key=\"{}\"'.format(encoded)
+    else: filter = ''
+
+    # encode the filter text coming in and get database data
+    response = requests.get('http://couch:5984/baseball/_design/byteam/_view/team{}'.format(filter))
+    if response.status_code != 200:
+        error_message = 'Unable to load team data.'
+    else: player_data = json.loads(response.text)
+
+    return render_template('baseball.html', data = player_data, error = error_message)
 
 @app.route('/hello/<username>', methods = ['GET'])
 def hello_user(username: str):
