@@ -92,9 +92,13 @@
 
     <div class='row'>
         <div class='col-xs-8 col-xs-offset-2'>
-            <h4>Couchdb</h4>
+            <h3>Couchdb</h3>
             <p>
-                Here's some data from a couchdb instance running at <a href='http://localhost:5984/_utils/' target='blank'>http://localhost:5984</a>.
+                The couch-setup service in docker-compose.yml configures a CouchDB runs the initialization script for the CouchDB 
+                script - create the database, a view, and bulk load some data.
+            </p>
+            <p>
+                The <a href='http://localhost:5000/baseball'>/baseball</a> endpoint can retrieve the data loaded from the couch-setup service.
             </p>
         </div>
     </div>
