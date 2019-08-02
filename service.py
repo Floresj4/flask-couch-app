@@ -43,7 +43,7 @@ def baseball():
         error_message = 'Unable to load team data.'
     else: player_data = json.loads(response.text)
 
-    return render_template('baseball.html', data = player_data, error = error_message)
+    return render_template('baseball.html', data = player_data, error = error_message, filtering = filter != '')
 
 @app.route('/hello/<username>', methods = ['GET'])
 def hello_user(username: str):
