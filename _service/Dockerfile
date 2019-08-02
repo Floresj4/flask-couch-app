@@ -9,6 +9,7 @@ RUN ln -sf /usr/bin/python3.6 /usr/bin/python
 
 #upgrade pip, just cause... and the flask dependency
 RUN python -m pip install --upgrade pip
+RUN python -m pip install requests
 RUN python -m pip install flask
 
 # set the relevant locale
