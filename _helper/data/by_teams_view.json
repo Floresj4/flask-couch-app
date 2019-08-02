@@ -1,0 +1,9 @@
+{
+    "_id": "_design/byteam",
+    "views": {
+        "team": {
+            "map": "function (doc) {\n  emit(doc.team, doc);\n}"
+        }
+    },
+    "language": "javascript"
+}

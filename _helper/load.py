@@ -41,9 +41,20 @@ if __name__ == "__main__":
 
         url = 'http://couch:5984/baseball/_bulk_docs'
         response = requests.post(url, headers = headers, data = json.dumps(players))
-        if(response.status_code != 201):
+        if response.status_code != 201:
             raise Exception("Loading team data failed! {}".format(response.text))
-        logger.info('POST request completed successfully: {}'.format(url))
+        logger.info('POST data completed successfully: {}'.format(url))
+
+        data_json = './data/by_teams_view.json'
+        logger.info('loading data file {}'.format(data_json))
+        with open(data_json, encoding = 'utf-8') as r:
+            by_teams_view = json.load(r)
+
+        url = 'http://couch:5984/baseball/_design/byteam'
+        response = requests.put(url, headers = headers, data = json.dumps(by_teams_view))
+        if response.status_code != 201:
+            raise Exception("Loading view data failed! {}".format(response.text))
+        logger.info('PUT view completed successfully! {}'.format(url))
         logger.info('Database loading completed successfully.')
     
     except Exception as e:
