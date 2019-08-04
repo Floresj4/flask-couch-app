@@ -11,6 +11,26 @@ docker-compose up --build
 ```
 builds the images before starting container services.
 
+### _datastore
+
+Contains Dockerfile and misc. configuration required to create the couchdb container image.
+
+### _helper
+
+Contains Dockerfile and misc. configuration required to configure the couchdb container shortly after startup.  See docker-compose.yml.
+
+**load.py** executes a series of requests against the couch service creating the database, loading some data, and creating a view to query against.
+
+### _service
+
+Contains Dockerfile and misc. configuration required to create the flask container image.
+
+**service.py** is the api service entrypoint.
+
+## service.py
+
+[service.py](https://github.com/Floresj4/flask-couch-app/blob/master/service.py "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available [here](http://localhost:5000).
+
 ## ~~service.bat~~
 
 Deprecated, but worth mentioning... service.bat is docker-compose before I started working with compose.
@@ -36,7 +56,3 @@ Once activated, the required libraries can be installed using the requirements.t
 ```
 
 Open your browser and navigate to `localhost:5000`.
-
-## service.py
-
-[service.py](https://github.com/Floresj4/flask-couch-app/blob/master/service.py "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available [here](http://localhost:5000).
