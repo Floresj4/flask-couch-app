@@ -29,7 +29,7 @@ Contains Dockerfile and misc. configuration required to create the flask contain
 
 ## service.py
 
-[service.py](https://github.com/Floresj4/flask-couch-app/blob/master/service.py "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available [here](http://localhost:5000) after cloning this repository and issuing the **docker-compose up** command.
+[service.py](https://github.com/Floresj4/flask-couch-app/blob/master/service.py "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available @ http://localhost:5000 after cloning this repository and issuing the **docker-compose up** command.
 
 ## ~~service.bat~~
 
