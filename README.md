@@ -1,10 +1,10 @@
-# Flask web application/service
+# Flask/CouchDB web application
 
-A checklist project &ndash; create an application or api &ndash; using the Flask microframework for learning a new technology and some nerdy computer fun!
+Using the Flask microframework and Jinja2 template renderer for python to develop a web application with simple document datastore interactions.
 
 ## docker-compose.yml
 
-The container orchestration configuration script.  docker-compose.yml defines the 3 services used for this application: flask, couch, and couch-setup.  These 3 services are chained (depends_on) to ensure the CouchDB is created and configured before the interactive REST service makes a request against it.
+The container orchestration configuration script.  docker-compose.yml defines the 3 services used for this application: flask, couch, and couch-setup.  These 3 services are chained (depends_on) to ensure the CouchDB is created and configured before the `@app.route('/baseball')` route makes a request against it.
 
 ```sh
 docker-compose up --build
