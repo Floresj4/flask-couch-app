@@ -11,14 +11,14 @@ docker-compose up --build
 ```
 builds the images before starting container services.
 
-### ~~service.bat~~
+## ~~service.bat~~
 
 Deprecated, but worth mentioning... service.bat is docker-compose before I started working with compose.
 
 1. ***-build** create the service container - flask or couch
 2. ***-run** runs the container image
 
-#### ~~local~~
+## ~~local~~
 
 Runs the Flask app on the host windows machines. local requires the proper Python configuration to run this application on your local machine.  Using a virtual environment helps to avoid contaminating the native python installed libraries.  
 
@@ -37,6 +37,6 @@ Once activated, the required libraries can be installed using the requirements.t
 
 Open your browser and navigate to `localhost:5000`.
 
-### service.py
+## service.py
 
 [service.py](https://github.com/Floresj4/flask-couch-app/blob/master/service.py "Flask entry point") has several endpoints to exercise basic API operations with the flask framework and CouchDB.  A browser client is available [here](http://localhost:5000).
